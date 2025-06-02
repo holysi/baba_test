@@ -16,11 +16,11 @@ const ResultsScreen: React.FC = () => {
   const getResultMessage = () => {
     const score = gameState.score;
     
-    if (score < 30) return "You're just beginning your journey!";
-    if (score < 60) return "You're making progress on your path.";
-    if (score < 90) return "You've gained significant insights!";
-    if (score < 120) return "Your understanding is truly impressive!";
-    return "You've reached remarkable levels of self-awareness!";
+    if (score < 30) return "你獲得了被罷免的資格";
+    if (score < 60) return "雖然你好像還有點良心，但還是聽黨的只有被罷免的結局";
+    if (score < 90) return "阿罷之，不罷你罷誰";
+    if (score < 120) return "很棒，黨說甚麼，你就做甚麼，這樣真的是好的嗎？看看那堆積如山的連署書";
+    return "罷免不適任立委，讓國會回歸正軌";
   };
   
   // Get personality trait based on character type and score
@@ -46,7 +46,7 @@ const ResultsScreen: React.FC = () => {
       return "Emotional Sage";
     }
     
-    return "Balanced Individual";
+    return "罷免不適任立委才能換得正常的國會";
   };
 
   return (
@@ -66,7 +66,7 @@ const ResultsScreen: React.FC = () => {
               
               <div className="md:w-2/3 md:pl-8">
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
-                  Your Journey Is Complete!
+                  你的立委生涯結束了！
                 </h1>
                 
                 <div className="flex items-center mb-4">
@@ -78,14 +78,14 @@ const ResultsScreen: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-gray-600">You explored as</p>
+                    <p className="text-gray-600">你扮演的立委是：</p>
                     <h3 className="font-semibold text-lg text-gray-800">{character.name}</h3>
                   </div>
                 </div>
                 
                 <div className="bg-indigo-50 rounded-lg p-4 mb-6">
                   <div className="flex justify-between items-center mb-2">
-                    <p className="font-medium text-gray-700">Final Score</p>
+                    <p className="font-medium text-gray-700">累積人民的怒氣值</p>
                     <p className="text-2xl font-bold text-indigo-600">{gameState.score}</p>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
@@ -114,7 +114,7 @@ const ResultsScreen: React.FC = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Try Again
+                  再試一次
                 </motion.button>
               </div>
             </div>

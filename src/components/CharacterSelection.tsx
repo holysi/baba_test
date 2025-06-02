@@ -15,7 +15,7 @@ const CharacterSelection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Personality Path Finder
+         立法院生存指南
         </motion.h1>
         
         <motion.p 
@@ -24,7 +24,7 @@ const CharacterSelection: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Choose a character to begin your psychological journey
+          選擇一個立委，開始你的立法院職涯，是否能夠達到你心中政治理想以及福國利民的結局
         </motion.p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -53,7 +53,7 @@ const CharacterSelection: React.FC = () => {
                   onClick={() => selectCharacter(character)}
                   className="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 >
-                  Select
+                  選擇
                 </button>
               </div>
             </motion.div>
