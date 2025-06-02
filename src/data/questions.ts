@@ -1,31 +1,41 @@
 import { Question, QuestionSet } from '../types';
-
+//對應characters.ts 裡的 id 欄位，設定每個立委的問題內容
+/*
+    id: '題目的id，通常會按照順序往下1-N題',
+    text: '題目內容',
+    options: [
+      { id: '答案id', text: '答案內容', points: 答案得分, isCorrect: true },
+      { id: '答案id', text: '答案內容', points: 答案得分, isCorrect: false },
+      { id: '答案id', text: '答案內容', points: 答案得分, isCorrect: false },
+    ],
+    isCorrect: true 才能前往下一題，其他會直接到結束頁面
+ */
 const analyticalQuestions: Question[] = [
   {
     id: 'a1',
-    text: 'When solving a problem, you prefer to:',
+    text: '為了保住立委席次，你決定到AB里和里民共餐，你決定送什麼東西表示親民？:',
     options: [
-      { id: 'a1-1', text: 'Break it down into smaller parts', points: 10, isCorrect: true },
-      { id: 'a1-2', text: 'Look for patterns and connections', points: 5, isCorrect: false },
-      { id: 'a1-3', text: 'Trust your intuition', points: 3, isCorrect: false },
+      { id: 'a1-1', text: '一個便當+一杯飲料', points: 10, isCorrect: true },
+      { id: 'a1-2', text: '一張都更同意書', points: 5, isCorrect: false },
+      { id: 'a1-3', text: '站出來投不同意宣言', points: 3, isCorrect: false },
     ],
   },
   {
     id: 'a2',
-    text: 'When making a decision, you prioritize:',
+    text: '媽媽陳錦錠議員說母親節即將到來，政治獻金法說小物只能限定30元，你決定贈送＿＿＿給里民？',
     options: [
-      { id: 'a2-1', text: 'Logic and facts', points: 10, isCorrect: true },
-      { id: 'a2-2', text: 'Potential outcomes', points: 7, isCorrect: false },
-      { id: 'a2-3', text: 'How it makes you feel', points: 4, isCorrect: false },
+      { id: 'a2-1', text: '垃圾袋', points: 10, isCorrect: true },
+      { id: 'a2-2', text: '修容組', points: 7, isCorrect: false },
+      { id: 'a2-3', text: '洗衣精', points: 4, isCorrect: false },
     ],
   },
   {
     id: 'a3',
-    text: 'In a group project, you typically:',
+    text: '行政院警告反對覆議《總預算案》將影響地方補助，因此你想推動的中和汙水下水道工程預算也會受影響，所以你決定？',
     options: [
-      { id: 'a3-1', text: 'Create a detailed plan', points: 12, isCorrect: true },
-      { id: 'a3-2', text: 'Generate creative ideas', points: 6, isCorrect: false },
-      { id: 'a3-3', text: 'Focus on team dynamics', points: 3, isCorrect: false },
+      { id: 'a3-1', text: '痾...對吼！我想起來了', points: 12, isCorrect: true },
+      { id: 'a3-2', text: '我不知道這是什麼欸', points: 6, isCorrect: false },
+      { id: 'a3-3', text: '反對啦！哪次不反！？', points: 3, isCorrect: false },
     ],
   },
   {
@@ -332,7 +342,7 @@ const emotionalQuestions: Question[] = [
     ],
   },
 ];
-
+//對應characters.ts 裡的 id 欄位
 export const questionSets: Record<string, QuestionSet> = {
   analytical: {
     id: 'analytical',

@@ -2,24 +2,24 @@ import { Character } from '../types';
 
 export const characters: Character[] = [
   {
-    id: 'analytical',
+    id: 'analytical',//人物id
     name: '張智倫',
-    avatar: 'https://images.pexels.com/photos/3771118/pexels-photo-3771118.jpeg?auto=compress&cs=tinysrgb&w=300',
+    avatar: '../images/張智倫8bit.png?auto=compress&cs=tinysrgb&w=300',
     description: '張家二兒子，爸爸是張慶忠AKA半分鐘通過服貿那位。媽媽是陳錦錠，有時都分不清楚政績是媽媽的還是誰的。',
-    questionSetId: 'analytical',
+    questionSetId: 'analytical',//對應問題系列
   },
   {
-    id: 'creative',
+    id: 'creative',//人物id
     name: '林德福',
-    avatar: 'https://images.pexels.com/photos/4342098/pexels-photo-4342098.jpeg?auto=compress&cs=tinysrgb&w=300',
-    description: 'ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ',
-    questionSetId: 'creative',
+    avatar: '../images/林德福8bit.png?auto=compress&cs=tinysrgb&w=300',
+    description: '在永和經歷過市議員市長到立法委員已超過30個年頭，讓永和人最有感的是在國會殿堂閉目養神',
+    questionSetId: 'creative',//對應問題系列
   },
   {
-    id: 'emotional',
-    name: '測試人員',
-    avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300',
-    description: '海牙~TESTTESTTESTTESTTESTTESTTEST',
-    questionSetId: 'emotional',
+    id: 'emotional',//人物id
+    name: '傅崐萁',
+    avatar: '../images/傅崐萁8bit.png?auto=compress&cs=tinysrgb&w=300',
+    description: '代表花蓮的立法委員，在0403大地震，太魯閣滿目瘡痍、搜救人員努力搜救之時，帶著國會立法委員前往敵對勢力國家接旨',
+    questionSetId: 'emotional',//對應問題系列
   },
 ];
