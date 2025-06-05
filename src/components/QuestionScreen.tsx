@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { useGame } from '../context/GameContext';
 import ScoreTree from './ScoreTree';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const QuestionScreen: React.FC = () => {
   const { gameState, getCurrentQuestion, answerQuestion } = useGame();
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showPoints, setShowPoints] = useState(false);
   const [pointsToAdd, setPointsToAdd] = useState(0);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   
   const currentQuestion = getCurrentQuestion();
   const character = gameState.selectedCharacter;
@@ -26,6 +28,7 @@ const QuestionScreen: React.FC = () => {
       answerQuestion(points, isCorrect);
       setSelectedOption(null);
       setShowPoints(false);
+      setIsDetailsOpen(false); // Reset details panel for next question
     }, 1500);
   };
 
@@ -69,6 +72,46 @@ const QuestionScreen: React.FC = () => {
             題目 {gameState.currentQuestionIndex + 1}
           </h2>
           <p className="text-gray-700 text-lg mb-4">{currentQuestion.text}</p>
+          
+          {/* Expandable Details Section */}
+          <div className="mb-6">
+            <button
+              onClick={() => setIsDetailsOpen(!isDetailsOpen)}
+              className="w-full flex items-center justify-between p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition-colors duration-200"
+            >
+              <span className="text-indigo-700 font-medium">相關說明</span>
+              {isDetailsOpen ? (
+                <ChevronUp className="w-5 h-5 text-indigo-700" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-indigo-700" />
+              )}
+            </button>
+            
+            <AnimatePresence>
+              {isDetailsOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="overflow-hidden"
+                >
+                  <div className="p-4 border border-indigo-100 rounded-lg mt-2">
+                    {currentQuestion.image && (
+                      <img
+                        src={currentQuestion.image}
+                        alt="Question context"
+                        className="w-full h-48 object-cover rounded-lg mb-4"
+                      />
+                    )}
+                    <p className="text-gray-700 leading-relaxed">
+                      {currentQuestion.description || "暫無相關說明"}
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
           
           {/* Options */}
           <div className="space-y-4">
