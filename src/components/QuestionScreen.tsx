@@ -108,16 +108,7 @@ const QuestionScreen: React.FC = () => {
             ))}
           </div>
         </motion.div>
-        
-        {/* Progress indicator */}
-        <div className="w-full bg-gray-200 rounded-full h-2.5">
-          <div 
-            className="bg-indigo-600 h-2.5 rounded-full transition-all duration-500"
-            style={{ width: `${((gameState.currentQuestionIndex + 1) / 12) * 100}%` }}
-          ></div>
-        </div>
-
-             
+                
           {/* Expandable Details Section */}
           <div className="mb-6">
             <button
@@ -158,6 +149,16 @@ const QuestionScreen: React.FC = () => {
             </AnimatePresence>
           </div>
         
+        
+        {/* Progress indicator */}
+        <div className="w-full bg-gray-200 rounded-full h-2.5">
+          <div 
+            className="bg-indigo-600 h-2.5 rounded-full transition-all duration-500"
+            style={{ width: `${((gameState.currentQuestionIndex + 1) / 12) * 100}%` }}
+          ></div>
+        </div>
+
+     
         <p className="text-center text-gray-600 mt-2">
           第 {gameState.currentQuestionIndex + 1} 題
         </p>
